@@ -12,13 +12,14 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private Long id;
     @NotNull
     private String username;
     @NotNull
     private String password;
 
-    @Email
+    @Email(message = "O e-mail informado não é válido")
+    @NotNull
     private String email;
 
     private Boolean googleAccount;
@@ -33,11 +34,11 @@ public class User {
     )
     private List<Role> roles;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

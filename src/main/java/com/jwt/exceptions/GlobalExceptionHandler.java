@@ -25,18 +25,18 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             HttpStatus status,
             WebRequest request) {
 
-        List<String> fieldErrors = ex.getBindingResult()
+        List<ApiErrorField> fieldErrors = ex.getBindingResult()
                 .getFieldErrors()
                 .stream()
-                .map(field -> field.getField() + ", " + field.getDefaultMessage())
+                .map(field -> new ApiErrorField(field.getField(), field.getDefaultMessage()))
                 .collect(Collectors.toList());
 
-        List<String> globalErrors = ex.getBindingResult()
+        List<ApiErrorField> globalErrors = ex.getBindingResult()
                 .getGlobalErrors()
                 .stream()
-                .map(field -> field.getObjectName() + ", " + field.getDefaultMessage())
+                .map(field -> new ApiErrorField(field.getObjectName(), field.getDefaultMessage()))
                 .collect(Collectors.toList());
-        List<String> errors = new ArrayList<String>();
+        List<ApiErrorField> errors = new ArrayList<ApiErrorField>();
         errors.addAll(globalErrors);
         errors.addAll(fieldErrors);
 
@@ -51,8 +51,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             Exception ex,
             WebRequest request) {
 
-        List<String> details = new ArrayList<String>();
-        details.add(ex.getMessage());
+        List<ApiErrorField> details = new ArrayList<ApiErrorField>();
+        details.add(new ApiErrorField("Relacionamento",ex.getMessage()));
         ApiError err = new ApiError(
                 LocalDateTime.now(),
                 "Violação de relacionamento",
@@ -66,8 +66,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             Exception ex,
             WebRequest request) {
 
-        List<String> details = new ArrayList<String>();
-        details.add(ex.getMessage());
+        List<ApiErrorField> details = new ArrayList<ApiErrorField>();
+        details.add(new ApiErrorField("Aceso",ex.getMessage()));
         ApiError err = new ApiError(
                 LocalDateTime.now(),
                 "Acesso negado.",

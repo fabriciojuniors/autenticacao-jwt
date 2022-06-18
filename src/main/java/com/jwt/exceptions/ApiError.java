@@ -10,9 +10,9 @@ public class ApiError {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private LocalDateTime timestamp;
     private String message;
-    private List<String> errors;
+    private List<ApiErrorField> errors;
 
-    public ApiError(LocalDateTime timestamp, String message, List<String> errors) {
+    public ApiError(LocalDateTime timestamp, String message, List<ApiErrorField> errors) {
         this.timestamp = timestamp;
         this.message = message;
         this.errors = errors;
@@ -34,11 +34,11 @@ public class ApiError {
         this.message = message;
     }
 
-    public List<String> getErrors() {
+    public List<ApiErrorField> getErrors() {
         return errors;
     }
 
-    public void setErrors(List<String> errors) {
+    public void setErrors(List<ApiErrorField> errors) {
         this.errors = errors;
     }
 }
