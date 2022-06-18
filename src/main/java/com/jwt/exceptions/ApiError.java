@@ -1,4 +1,4 @@
-package com.jwt.authentication.exceptions;
+package com.jwt.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

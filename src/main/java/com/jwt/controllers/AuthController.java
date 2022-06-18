@@ -1,4 +1,4 @@
-package com.jwt.authentication.controllers;
+package com.jwt.controllers;
 
 import com.jwt.authentication.JwtProvider;
 import com.jwt.authentication.JwtResponse;

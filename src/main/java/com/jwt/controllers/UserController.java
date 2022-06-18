@@ -1,7 +1,7 @@
-package com.jwt.authentication.controllers;
+package com.jwt.controllers;
 
 import com.jwt.authentication.models.User;
-import com.jwt.authentication.repositories.UserRepository;
+import com.jwt.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
