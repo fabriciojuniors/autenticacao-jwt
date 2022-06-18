@@ -1,6 +1,6 @@
 package com.jwt.controllers;
 
-import com.jwt.authentication.models.User;
+import com.jwt.models.User;
 import com.jwt.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

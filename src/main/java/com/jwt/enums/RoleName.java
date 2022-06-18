@@ -1,4 +1,4 @@
-package com.jwt.authentication.enums;
+package com.jwt.enums;
 
 public enum RoleName {
     USER, ADMIN, MANAGER

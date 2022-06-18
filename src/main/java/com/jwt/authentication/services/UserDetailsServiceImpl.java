@@ -1,7 +1,7 @@
 package com.jwt.authentication.services;
 
-import com.jwt.authentication.models.User;
-import com.jwt.authentication.models.UserPrincipal;
+import com.jwt.models.User;
+import com.jwt.models.UserPrincipal;
 import com.jwt.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

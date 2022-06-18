@@ -1,6 +1,6 @@
 package com.jwt.authentication;
 
-import com.jwt.authentication.models.UserPrincipal;
+import com.jwt.models.UserPrincipal;
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;

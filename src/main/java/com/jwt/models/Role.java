@@ -1,6 +1,6 @@
-package com.jwt.authentication.models;
+package com.jwt.models;
 
-import com.jwt.authentication.enums.RoleName;
+import com.jwt.enums.RoleName;
 
 import javax.persistence.*;
 
